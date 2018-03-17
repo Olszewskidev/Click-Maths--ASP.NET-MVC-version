@@ -1,0 +1,55 @@
+﻿body {
+}
+.buttonnav{
+    position:absolute;
+    top:50%;
+    left:50%;
+    /*transform: translate(-50%,-50%);*/
+    width:180px;
+    height:50px;
+    text-transform:uppercase;
+    text-align:center;
+    line-height:50px;
+    color:red;
+    text-decoration:none;
+    font-size:10px;
+    letter-spacing:4px;
+    
+}
+.buttonnav:before,
+.buttonnav:after,
+span:before,
+span:after
+{
+content:'';
+position:absolute;
+width:0px;
+height:0px;
+background-color: grey;
+transition:1s;
+}
+.buttonnav:before{
+    top:-2px;
+    left:-2px;
+}
+.buttonnav:after{
+     top:-2px;
+    right:-2px;
+}
+span:before{
+     bottom:-2px;
+    left:-2px;
+}
+span:after{
+     bottom:-2px;
+    right:-2px;
+}
+.buttonnav:hover:before,
+.buttonnav:hover:after,
+.buttonnav:hover span:before,
+.buttonnav:hover span:after{
+    width:6px;
+    height:6px; 
+    width: calc(185px/2);   
+  
+}
