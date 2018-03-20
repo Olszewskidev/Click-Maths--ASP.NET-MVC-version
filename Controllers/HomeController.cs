@@ -39,7 +39,7 @@ namespace ClickMathsMVC.Controllers
             {
                 string FileName = Path.GetFileNameWithoutExtension(cm.ImgExample.FileName);
                 string Extension = Path.GetExtension(cm.ImgExample.FileName);
-                FileName +=DateTime.Now.ToString("yymmssfff") + Extension;
+                FileName =FileName+DateTime.Now.ToString("yymmssfff") + Extension;
                 cm.QuizImg = "~/AppFile/Img/" + FileName;
                 cm.ImgExample.SaveAs(Path.Combine(Server.MapPath("~/AppFile/Img/"), FileName));
             }

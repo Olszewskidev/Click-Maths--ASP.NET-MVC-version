@@ -30,6 +30,7 @@ namespace ClickMathsMVC.Models
 
         [NotMapped]
         public HttpPostedFileBase ImgExample { get; set; }
+
         public CMQuiz()
         {
             QuizImg = "~/AppFile/Img/plus-button.png";

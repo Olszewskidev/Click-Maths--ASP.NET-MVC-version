@@ -7,14 +7,32 @@
         r.readAsDataURL(imgUpl.files[0]);
     }
 }
+
 function ajaxAddQuiz(addingForm) {
     $validator.unobtrusive.parse(addingForm);
-    if ($(addingForm).valid()) {
+    if ($(addingForm).valid())
+    {
         $.ajax({
             type: 'POST',
-            url: addingForm.action,
+            url: 'HomeController/AddQuiz',
             data: new FormData(addingForm),
-            success: alert("Succes, you added correct")
-        })
+            success: function () {
+                alert("We did it");
+            }
+        });
     }
+return false;
+}
+function checkJsFun(correct) {
+    var value = document.getElementById("UsAnswer").value;
+    if (correct == val) {
+        alert("Zgadza sie");
+    }
+    else
+        alert("Niee");
+      
+}
+function spr(c) {
+    alert(c);
+
 }
