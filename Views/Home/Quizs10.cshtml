@@ -28,10 +28,10 @@
     <tr>
         <td style="margin:auto">
             @*@Html.DisplayFor(modelItem => item.QuizImg)*@
-            <div style="width: 65%; height: 100%;background-image: url('../../AppFile/Img/pustka-jak-kartka-papieru.jpg'); margin:auto">
-                <img src="@Url.Content(item.QuizImg)" style="height:200px; width:320px;margin:auto" id="prevImg" />
+            <div style="width: 65%; height: 100%;background-image: url('../../AppFile/Img/pustka-jak-kartka-papieru.jpg'); margin:auto; border-radius:10px; text-align:center">
+                <img src="@Url.Content(item.QuizImg)" style="height:40%; width:35%;margin:auto" id="prevImg" />
                 <div style="padding:20px 0px; margin:0% 30%">
-                    <input type="number" id="UsAnswer@item.ID" class="odp"/> 
+                    <input type="number" id="UsAnswer" class="odp" style="margin:auto; width:60%;height:50%;"/> 
                     <button type="button"onclick="checkJsFun('@item.CorrectAnswer')" value="OK">OK</button>
                     <br />
                     <button type="button" onclick="spr('@item.CorrectAnswer')" value="OK">SPR ile</button>
