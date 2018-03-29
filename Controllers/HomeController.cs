@@ -16,6 +16,10 @@ namespace ClickMathsMVC.Controllers
         {
             return View();
         }
+        public ActionResult Start()
+        {
+            return View();
+        }
         public ActionResult Quizs10()
         {
             return View(Get10Quizs());

@@ -197,14 +197,18 @@
   <ItemGroup>
     <Content Include="AppFile\Img\geek.png" />
     <Content Include="AppFile\Img\geekM.png" />
+    <Content Include="AppFile\Img\logoCM.jpg" />
+    <Content Include="AppFile\Img\monitor.jpg" />
     <Content Include="AppFile\Img\plus-button.png" />
     <Content Include="AppFile\Img\pustka-jak-kartka-papieru.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ionicons.css" />
     <Content Include="Content\jquery.tabSlideOut.css" />
     <Content Include="Content\StyleSheet1.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\ionicons.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Models\DbModels.Context.tt">
@@ -226,9 +230,16 @@
     <Content Include="Models\DbModels.edmx.diagram">
       <DependentUpon>DbModels.edmx</DependentUpon>
     </Content>
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="fonts\ionicons.eot" />
+    <Content Include="fonts\ionicons.ttf" />
+    <Content Include="fonts\ionicons.woff" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.tabSlideOut.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
@@ -258,6 +269,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Quizs10.cshtml" />
     <Content Include="Views\Home\AddNew.cshtml" />
+    <Content Include="Views\Home\Start.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -268,7 +280,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -16,6 +16,7 @@
     letter-spacing:4px;
     
 }
+/*nav buttons effects*/
 .buttonnav:before,
 .buttonnav:after,
 span:before,
@@ -51,5 +52,68 @@ span:after{
     width:6px;
     height:6px; 
     width: calc(185px/2);   
-  
+}
+/*CheckAnswer buttons effect*/
+.coolbutton{
+    width: 160px;
+  height: 50px;
+  background-color: black;
+  /*position: absolute;*/
+  left: 50%;
+  top: 50%;
+  /*transform: translate(-50%, -50%);*/
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+  color: #fff;
+  text-align:center;
+  margin:auto;
+  font-size:12px;
+  letter-spacing:2px;
+}
+.coolbutton:before {
+  content: 'Check My Answer';
+  position: relative;
+  left: 10%;
+  top: 0%;
+  transition: all 0.3s;
+  transform: translate(-50%, -50%);
+}
+.coolbutton:hover:before{
+    top:-50px;
+}
+.coolbutton:after{
+    font-family:'Ionicons';
+    position: relative;
+    content:'\f375';
+    left: -38%;
+    top: -80%;
+    transition: all 0.3s;
+    transform: translate(-50%, -50%);
+    font-size:30px;
+}
+.coolbutton:hover:after{
+    top:13%;
+}
+#LetsPlay{
+    content:'Lets play';
+}
+#monitor {
+    background-image: url("../../AppFile/Img/monitor.jpg");
+    background-size:auto;
+    background-repeat:no-repeat;
+    height:400px;
+    width:600px;
+    margin:auto;
+}
+#ekranmoinitora{
+    background-color:white; 
+    height:220px;
+    width:380px; 
+    margin-left:117px;
+    margin-top:50px;
+    position:absolute;
+    border-radius:5px;
+    background-image: url("../../AppFile/Img/logoCM.jpg");
+
 }
