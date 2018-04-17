@@ -4,7 +4,7 @@
     ViewBag.Title = "AddNew";
 }
 
-<h2 class="text-center">Add new maths quiz:</h2>
+<h2 class="text-center" style="margin-top:30px">Add new maths quiz:</h2>
 
 @using (Html.BeginForm("AddQuiz", "Home", FormMethod.Post, new { enctype = "multipart/form-data",onSubmit = "return ajaxAddQuiz(this);"}))
 {
@@ -16,11 +16,11 @@
         @Html.HiddenFor(model => model.ID)
         @Html.HiddenFor(model => model.QuizImg)
 
-        <div class="form-group">
+        <div class="form-group text-center">
           @*  @Html.LabelFor(model => model.QuizImg, htmlAttributes: new { @class = "control-label col-md-2" })*@
             <div style="margin:auto">
                 <img src="@Url.Content(Model.QuizImg)"style="height:20%; width:20%" id="prevImg"/>
-                <input type="file" name="ImgExample"style="margin-top:10px" accept="image/jpeg, image/png" onchange="showPrevieImage(this, document.getElementById('prevImg'))"/>
+                <input type="file" name="ImgExample"style="margin:10px auto; display:block" accept="image/jpeg, image/png" onchange="showPrevieImage(this, document.getElementById('prevImg'))"/>
             </div>
         </div>
         <div class="form-group">
@@ -38,11 +38,15 @@
                 @Html.ValidationMessageFor(model => model.Points, "", new { @class = "text-danger" })
             </div>
         </div>
-
-
-
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
+            @Html.LabelFor(model => model.Difficult, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Difficult, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Difficult, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="text-center">
                 <input type="submit" value="Add" class="btn btn-default" />
             </div>
         </div>

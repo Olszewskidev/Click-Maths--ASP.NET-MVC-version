@@ -8,6 +8,7 @@
     <Property Name="CorrectAnswer" Type="int" />
     <Property Name="Points" Type="int" />
     <Property Name="QuizImg" Type="nvarchar" MaxLength="500" />
+    <Property Name="Difficult" Type="int" />
   </EntityType>
   <EntityContainer Name="CMDataModelStoreContainer">
     <EntitySet Name="CMQuiz" EntityType="Self.CMQuiz" Schema="dbo" store:Type="Tables" />

@@ -49,9 +49,20 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -111,6 +122,18 @@
     <Reference Include="Antlr3.Runtime">
       <Private>True</Private>
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="X.PagedList, Version=7.2.0.0, Culture=neutral, PublicKeyToken=00b6c4f97602e5e8, processorArchitecture=MSIL">
+      <HintPath>..\packages\X.PagedList.7.2.0\lib\netstandard1.2\X.PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="X.PagedList.Mvc, Version=7.2.0.0, Culture=neutral, PublicKeyToken=c6e0b5b21f916f4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\X.PagedList.Mvc.7.2.0\lib\net452\X.PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="X.PagedList.Mvc.Common, Version=7.2.0.0, Culture=neutral, PublicKeyToken=00b6c4f97602e5e8, processorArchitecture=MSIL">
+      <HintPath>..\packages\X.PagedList.Mvc.7.2.0\lib\net452\X.PagedList.Mvc.Common.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -195,10 +218,14 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AppFile\Img\Cl1.jpg" />
+    <Content Include="AppFile\Img\Cl2.jpg" />
+    <Content Include="AppFile\Img\Cl3.jpg" />
+    <Content Include="AppFile\Img\Cl4.jpg" />
     <Content Include="AppFile\Img\geek.png" />
     <Content Include="AppFile\Img\geekM.png" />
-    <Content Include="AppFile\Img\logoCM.jpg" />
     <Content Include="AppFile\Img\monitor.jpg" />
+    <Content Include="AppFile\Img\monitorzLogo.jpg" />
     <Content Include="AppFile\Img\plus-button.png" />
     <Content Include="AppFile\Img\pustka-jak-kartka-papieru.jpg" />
     <Content Include="Content\bootstrap.css" />
@@ -206,6 +233,7 @@
     <Content Include="Content\ionicons.css" />
     <Content Include="Content\jquery.tabSlideOut.css" />
     <Content Include="Content\StyleSheet1.css" />
+    <Content Include="css\bootstrap-slider.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\ionicons.svg" />
@@ -221,6 +249,7 @@
       <DependentUpon>DbModels.edmx</DependentUpon>
       <LastGenOutput>DbModels.cs</LastGenOutput>
     </Content>
+    <Content Include="Scripts\bootstrap-slider.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\DbModels.edmx">
@@ -252,6 +281,10 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\snackbar.css" />
+    <Content Include="Scripts\snackbar.js" />
+    <Content Include="Scripts\snackbar.min.css" />
+    <Content Include="Scripts\snackbar.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -267,9 +300,11 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Quizs10.cshtml" />
     <Content Include="Views\Home\AddNew.cshtml" />
     <Content Include="Views\Home\Start.cshtml" />
+    <Content Include="Scripts\snackbar.css.map" />
+    <Content Include="Scripts\snackbar.min.js.map" />
+    <Content Include="Views\Home\Android.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

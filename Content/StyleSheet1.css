@@ -1,5 +1,16 @@
 ﻿body {
 }
+#sidebar{
+    position:fixed;
+    left:0;
+    float:left;
+    width:200px;
+    height:100%;
+    background-color:#222222;
+}
+.leftpaneltext{
+    color:#8e999d;
+}
 .buttonnav{
     position:absolute;
     top:50%;
@@ -99,21 +110,24 @@ span:after{
     content:'Lets play';
 }
 #monitor {
-    background-image: url("../../AppFile/Img/monitor.jpg");
-    background-size:auto;
+    background-image: url("../../AppFile/Img/monitorzLogo.jpg");
+    background-size:contain;
     background-repeat:no-repeat;
     height:400px;
     width:600px;
     margin:auto;
 }
-#ekranmoinitora{
-    background-color:white; 
-    height:220px;
-    width:380px; 
-    margin-left:117px;
-    margin-top:50px;
-    position:absolute;
-    border-radius:5px;
-    background-image: url("../../AppFile/Img/logoCM.jpg");
-
+.form-control{
+    display:block;
+    margin:0 auto;
+}
+@media screen and (max-width: 640px){
+    #monitor 
+    {
+     width:100%;
+     }  
+    #HelloText{
+        position:absolute;
+        margin:-100px auto;
+    }    
 }

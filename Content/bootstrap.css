@@ -411,7 +411,7 @@ p {
   line-height: 1.4;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
   .lead {
     font-size: 21px;
   }
@@ -924,7 +924,7 @@ pre code {
   width: 100%;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
   .container {
     max-width: 750px;
   }
@@ -1584,7 +1584,7 @@ table th[class*="col-"] {
   border-color: #f8e5be;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .table-responsive {
     width: 100%;
     margin-bottom: 15px;
@@ -1933,7 +1933,7 @@ textarea.input-lg {
   color: #737373;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
   .form-inline .form-group {
     display: inline-block;
     margin-bottom: 0;

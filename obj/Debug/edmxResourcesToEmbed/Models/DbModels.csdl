@@ -8,6 +8,7 @@
     <Property Name="CorrectAnswer" Type="Int32" />
     <Property Name="Points" Type="Int32" />
     <Property Name="QuizImg" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Difficult" Type="Int32" />
   </EntityType>
   <EntityContainer Name="DBModel" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="CMQuiz" EntityType="Self.CMQuiz" />

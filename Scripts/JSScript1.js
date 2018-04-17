@@ -1,10 +1,4 @@
-﻿////// GamePanel on left center// must have on the top of js script, its the bast way to not showing the pane when page loading on start.
-$('#UserPanel').tabSlideOut({
-    tabLocation: 'left',
-    action: 'hover'
-});
-
-$(document).ready(function () {
+﻿$(document).ready(function () {
     var cookieGet = document.cookie;
     if (cookieGet !=null) {
         getCookie(cookieGet);
@@ -19,11 +13,12 @@ function checkJsFun(correct, points) {
         GameScore += parseInt(points);
         value.val("");
         $('#ScoreText').html(GameScore);
+        snackBarPopUP('Correct answer','forestgreen');
 
     }
     else
-        alert("Niee");
-      
+        snackBarPopUP('Wrong answer', 'tomato');
+         
 }
 /////Gender checking in Game Panel
     //var cookieGender = getCookie("gender");
@@ -41,12 +36,23 @@ var genderImg = $('#GenderImg');
         {
             setGender("female", "../../AppFile/Img/geek.png");
         }
+        
     });
+    var firsttime = false;
     function setGender(gT, srcToPng) {
-        genderType = gT;
-        divWithInputs.hide(750);
-        genderImg.attr('src', srcToPng);
-        genderImg.fadeIn(1000);
+        if (firsttime == false) {
+            genderType = gT;
+            divWithInputs.hide(750);
+            genderImg.attr('src', srcToPng);
+            genderImg.fadeIn(1000);
+            firsttime = true;
+        }
+        else {
+            genderType = gT;
+            divWithInputs.hide();
+            genderImg.attr('src', srcToPng);
+            genderImg.show();
+        }      
     }
 
    
@@ -54,7 +60,7 @@ var genderImg = $('#GenderImg');
     $('input[name="cookieyes"]').click(function () {
         if ($("#checkbox").prop("checked", true) && genderType != "") {
             createCookie("gender", genderType, 20);
-            createCookie("score", GameScore.toString(), 20);
+            createCookie("score", GameScore, 20);
         }
         else if ($("#checkbox").prop("checked", false)) {
             ;
@@ -71,33 +77,21 @@ var genderImg = $('#GenderImg');
             document.cookie = name + "=" + value + expires + "; path=/";
         }
     });
-    function getCookie(cookieEx) {
-        cookieEx = cookieEx.split("; ");
-        for (var i = 0; i < cookieEx.length; i++) {
-            var spltedArray = cookieEx[i].split("=");
-            if (spltedArray[0] == "gender") {
-                if (spltedArray[1] == "male") {
-                    setGender("male", "../../AppFile/Img/geekM.png");
-                }
-                else {
-                    setGender("female", "../../AppFile/Img/geek.png");
-                }
+//Get cookies with User score, when page was reloaded
+    function getCookie(cookieGet) {
+            var pairs = cookieGet.split(";");
+            var cookies = {};
+            for (var i = 0; i < pairs.length; i++) {
+                var pair = pairs[i].split("=");
+                cookies[(pair[0] + '').trim()] = unescape(pair[1]);
             }
-            else { }
-            //GameScore = parseInt(spltedArray[3]);
-            //$('#ScoreText').html(GameScore);
+            if (cookies.gender == "male")
+                setGender("male", "../../AppFile/Img/geekM.png");
+            else if (cookies.gender == "female")
+                setGender("female", "../../AppFile/Img/geek.png");
+            GameScore = parseInt(cookies.score);
+            $('#ScoreText').html(GameScore);
         }
-    }
-/////Monitor LogoCM scrolling //not working yet/// Start page
-   (function ($) {
-        var x = 0; var y = 0;
-        var ekran = $("#ekranmoinitora");
-        ekran.css('backgroundPosition', x + 'px' + ' ' + y + 'px');
-        window.setInterval(function () {
-            ekran.css("backgroundPosition", x + 'px' + ' ' + y + 'px');
-            y--;
-        }, 90);
-    });
 // //Previe when user upload img file// ADD NEW page
    function showPrevieImage(imgUpl, prevImg) {
        if (imgUpl.files && imgUpl.files[0]) {
@@ -116,10 +110,17 @@ var genderImg = $('#GenderImg');
                type: 'POST',
                url: 'HomeController/AddQuiz',
                data: new FormData(addingForm),
-               success: function () {
-                   alert("We did it");
+               success: function (data) {
+                   Snackbar.show({ showAction: false, text: "You added a new quiz", backgroundColor: "forestgreen", pos: 'bottom-right', duration: '3000' });
+               },
+               error: function () {
+                   Snackbar.show({ showAction: false, text: "Bad new's something went wrong", backgroundColor: "tomato", pos: 'bottom-right', duration: '3000' });
                }
            });
        }
        return false;
+   }
+//Pop up SnackBar, when answer is correct or incorrect
+   function snackBarPopUP(textM,color) {
+       Snackbar.show({ showAction: false, text: textM, backgroundColor: color, pos: 'bottom-right', duration: '3000'});
    }

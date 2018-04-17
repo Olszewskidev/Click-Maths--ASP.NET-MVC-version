@@ -1,37 +1,80 @@
-﻿
+﻿@using X.PagedList;
+@using X.PagedList.Mvc;
+@model IEnumerable<ClickMathsMVC.Models.CMQuiz>
 @{
     ViewBag.Title = "Index";
 }
 <head>
-    <link href="~/Content/jquery.tabSlideOut.css" rel="stylesheet" />
     <link href="~/Content/ionicons.css" rel="stylesheet" />
+    <link href="~/css/bootstrap-slider.min.css" rel="stylesheet" />
 </head>
-<div class="tab-content">
-    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
-    <script src="~/Scripts/jquery.tabSlideOut.js"></script>
-    <div id="UserPanel" style="width:20%; height:auto; background-color: lightsteelblue"><span class="handle">GamePanel</span>
-        <div style="text-align: center;margin:auto">
+<div id="sidebar">
+    <div style="text-align: center;margin:30px auto">
 
-            <label for="Gender"> Gender:</label>
-            <div id="Gender">
-                <img id="GenderImg" style="display:none"/>
-                <div id="inputGender">
-                    Male: <input type="checkbox" id="male" name="Gen" />
-                    Female: <input type="checkbox" id="female" name="Gen" />
-                </div>
+        <label for="Gender" class="leftpaneltext"> Gender:</label>
+        <div id="Gender">
+            <img id="GenderImg" style="display:none" />
+            <div id="inputGender" class="leftpaneltext">
+                Male: <input type="checkbox" id="male" name="Gen" />
+                Female: <input type="checkbox" id="female" name="Gen" />
             </div>
-            <img src="~/AppFile/Img/geek.png" style="display:none"/>
-            <br />
-            <label for="ScoreText">Score:</label>
-            <b id="ScoreText">0</b>
-            <br />
-            <label for="answer">Your Answer:</label>
-            <input type="number" id="answer" />
-            Remember me again:<input type="checkbox" name="cookieyes" />
         </div>
-    </div>
-    <div class="tab-pane fade in active" id="QuizContent">@Html.Action("Quizs10")</div>
-    <div class="tab-pane fade in" id="AddContent">Tutaj dodawanie zagadek</div>
-    <script src="~/Scripts/JSScript1.js"></script>
+        <img src="~/AppFile/Img/geek.png" style="display:none" />
+        <br />
+        <label for="ScoreText" class="leftpaneltext">Score:</label>
+        <b id="ScoreText" class="leftpaneltext">0</b>
+        <br />
+        <label for="answer" class="leftpaneltext">Your Answer:</label>
+        <input type="number" id="answer" />
+        Remember me again:<input type="checkbox" name="cookieyes" />
+        <div class="text-center" style="margin: 30px auto">
+            @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+            {
+                <label for="RadioList" style="margin-right:10px" class="leftpaneltext">Choos the difficult level:</label>
+                                    <ul id="RadioList" style="list-style-type:none">
+                                        <li> <label class="leftpaneltext">@Html.RadioButton("search", "NoMetter", true)No Metter</label></li>
+                                        <li> <label class="leftpaneltext">@Html.RadioButton("search", "Easy")Easy......</label></li>
+                                        <li> <label class="leftpaneltext"> @Html.RadioButton("search", "Medium")Medium....</label></li>
+                                        <li> <label class="leftpaneltext">@Html.RadioButton("search", "Hard")Hard......</label></li>
+                                   </ul>
+                                    <button type="submit" class="btn btn-primary btn-sm" id="choos">Choos</button>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                             <table class="table text-center" style="margin:50px 0 0 100px">
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td style="margin:auto">
+                                        <div style="width: 65%; height: 100%;background-image: url('../../AppFile/Img/pustka-jak-kartka-papieru.jpg'); margin:auto; border-radius:10px; text-align:center">
+                                            <img src="@Url.Content(item.QuizImg)" style="height:100%; width:100%;margin:auto; margin-top:10%" id="prevImg" />
+                                            <div style="padding:20px 0px; margin:0% 30%">
+                                                <div class="coolbutton" onclick="checkJsFun('@item.CorrectAnswer', '@item.Points')"></div>
+                                            </div>
+                                        </div>
+                                        <br />
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                        <footer class="text-center">
+                            @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index",new { page, search = Request.QueryString["search"]}),
+                           new PagedListRenderOptions() {DisplayPageCountAndCurrentLocation=true})
+                        </footer>
+                        <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+                        <script src="~/Scripts/bootstrap-slider.min.js"></script>
+                        <script src="~/Scripts/JSScript1.js"></script>
+                        <script type="text/javascript">
+                            let diffiLevel;
+                            $("#ex13").slider();
+                            $("#ex13").on("slide", function (slideEvt) {
+                              diffiLevel=parseInt(slideEvt.value);
+                            });
+                            $("#choos").on("click", function () {
+                               @Url.Action("Index", new { Search = "diffiLevel" });
+                            });
+                        </script>
 
-</div>
+                    </div>

@@ -27,6 +27,9 @@ namespace ClickMathsMVC.Models
         public Nullable<int> Points { get; set; }
         [Required(ErrorMessage = "*This field can't be empty")]
         public string QuizImg { get; set; }
+        [Required(ErrorMessage = "*This field can't be empty")]
+        [DisplayName("Difficult Level Answer:")]
+        public Nullable<int> Difficult { get; set; }
 
         [NotMapped]
         public HttpPostedFileBase ImgExample { get; set; }

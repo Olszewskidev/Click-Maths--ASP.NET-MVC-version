@@ -1,4 +1,3 @@
-C:\Users\Kamil\Desktop\Agregator memów\ClickMathsMVC\ClickMathsMVC\obj\Debug\ClickMathsMVC.csprojResolveAssemblyReference.cache
 C:\Users\Kamil\Desktop\Agregator memów\ClickMathsMVC\ClickMathsMVC\bin\roslyn\csc.exe
 C:\Users\Kamil\Desktop\Agregator memów\ClickMathsMVC\ClickMathsMVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\Kamil\Desktop\Agregator memów\ClickMathsMVC\ClickMathsMVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -67,3 +66,10 @@ C:\Users\Kamil\Desktop\Agregator memów\ClickMathsMVC\ClickMathsMVC\bin\Microsof
 C:\Users\Kamil\Desktop\Agregator memów\ClickMathsMVC\ClickMathsMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Kamil\Desktop\Agregator memów\ClickMathsMVC\ClickMathsMVC\obj\Debug\ClickMathsMVC.dll
 C:\Users\Kamil\Desktop\Agregator memów\ClickMathsMVC\ClickMathsMVC\obj\Debug\ClickMathsMVC.pdb
+C:\Users\Kamil\Desktop\Agregator memów\ClickMathsMVC\ClickMathsMVC\bin\PagedList.dll
+C:\Users\Kamil\Desktop\Agregator memów\ClickMathsMVC\ClickMathsMVC\bin\PagedList.xml
+C:\Users\Kamil\Desktop\Agregator memów\ClickMathsMVC\ClickMathsMVC\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Kamil\Desktop\Agregator memów\ClickMathsMVC\ClickMathsMVC\bin\X.PagedList.dll
+C:\Users\Kamil\Desktop\Agregator memów\ClickMathsMVC\ClickMathsMVC\bin\X.PagedList.Mvc.Common.dll
+C:\Users\Kamil\Desktop\Agregator memów\ClickMathsMVC\ClickMathsMVC\bin\X.PagedList.Mvc.dll
+C:\Users\Kamil\Desktop\Agregator memów\ClickMathsMVC\ClickMathsMVC\obj\Debug\ClickMathsMVC.csprojResolveAssemblyReference.cache

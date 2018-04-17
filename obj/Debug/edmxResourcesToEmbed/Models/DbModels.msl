@@ -4,6 +4,7 @@
     <EntitySetMapping Name="CMQuiz">
       <EntityTypeMapping TypeName="CMDataModel.CMQuiz">
         <MappingFragment StoreEntitySet="CMQuiz">
+          <ScalarProperty Name="Difficult" ColumnName="Difficult" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="CorrectAnswer" ColumnName="CorrectAnswer" />
           <ScalarProperty Name="Points" ColumnName="Points" />
